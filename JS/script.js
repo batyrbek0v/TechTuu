@@ -4,6 +4,7 @@ const menuBurger = document.querySelector('.burger')
 const mobileWrapper = document.querySelector('.mobile-wrapper')
 const closeIcon = document.querySelector('.close-img')
 const slider = document.querySelector('.team-cards-wrapper')
+const socialIconsWrapper = document.querySelector('.social-icons-wrapper')
 
 // DOM-ELEMENTS-END
 
@@ -25,8 +26,37 @@ const sliderBase = [
   },
 ]
 
+const iconsBase = [
+  {
+    img: './Assets/icons/facebook.svg',
+    alt: 'facebook-icon',
+    route: 'telegram',
+  },
+  {
+    img: './Assets/icons/instagram.svg',
+    alt: 'instagram-icon',
+    route: 'instagram',
+  },
+  {
+    img: './Assets/icons/youtube.svg',
+    alt: 'youtube-icon',
+    route: 'telegram',
+  },
+  {
+    img: './Assets/icons/telegram.svg',
+    alt: 'telegram-icon',
+    route: 'telegram',
+  },
+  {
+    img: './Assets/icons/whatsapp.svg',
+    alt: 'whatsapp-icon',
+    route: 'telegram',
+  },
+]
+
 window.addEventListener('load', () => {
   sliderCardsTemplate(sliderBase)
+  iconsTemplate(iconsBase)
 })
 
 const sliderCardsTemplate = sliderBase => {
@@ -46,7 +76,11 @@ const sliderCardsTemplate = sliderBase => {
 
   slider.innerHTML = template
 }
+const iconsTemplate = icon => {
+  const template = icon.map(item => `<a href="${item.route}"><img src="${item.img}" alt="${item.alt}"></a>`).join('')
 
+  socialIconsWrapper.innerHTML = template
+}
 menuBurger.addEventListener('click', e => {
   e.preventDefault()
 

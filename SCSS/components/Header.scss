@@ -71,6 +71,7 @@
       color: $color-white;
       font-size: 20px;
       font-weight: 400;
+      font-family: 'Audiowide', cursive;
 
       &:hover {
         opacity: 0.8;
@@ -161,6 +162,7 @@
   justify-content: space-between;
   padding: 2rem 4rem;
   margin: 0 auto;
+  font-family: 'Audiowide', cursive;
 
   @media (max-width:1441px) {
     width: 100%;
@@ -229,6 +231,7 @@
       cursor: pointer;
       font-size: 24px;
       transition: 0.3s;
+      font-family: 'Audiowide', cursive;
 
       &:hover {
         opacity: 0.8;
