@@ -3,38 +3,25 @@
 const menuBurger = document.querySelector('.burger')
 const mobileWrapper = document.querySelector('.mobile-wrapper')
 const closeIcon = document.querySelector('.close-img')
-const slider = document.querySelector('.slider')
+const slider = document.querySelector('.team-cards-wrapper')
 
 // DOM-ELEMENTS-END
 
 const sliderBase = [
   {
-    img: './assets/img/project-img2.png',
-    route: '/'
+    title: 'ASAN AMANOV',
+    subTitle: 'CEO/FOUNDER',
+    img: './assets/img/team-img1.png',
   },
   {
-    img: './assets/img/project-img3.png',
-    route: '/'
+    title: 'AIJAN ASANOVA',
+    subTitle: 'CTO',
+    img: './assets/img/team-img2.png',
   },
   {
-    img: './assets/img/project-img4.png',
-    route: '/'
-  },
-  {
-    img: './assets/img/project-img5.png',
-    route: '/'
-  },
-  {
-    img: './assets/img/project-img6.png',
-    route: '/'
-  },
-  {
-    img: './assets/img/project-img1.png',
-    route: '/'
-  },
-  {
-    img: './assets/img/project-img7.png',
-    route: '/'
+    title: 'IVAN IVANOV',
+    subTitle: 'FRONTEND DEVELOPER',
+    img: './assets/img/team-img3.png',
   },
 ]
 
@@ -45,11 +32,15 @@ window.addEventListener('load', () => {
 const sliderCardsTemplate = sliderBase => {
   const template = sliderBase.map(item => {
     return `
-        <a href="${item.route}">
-          <div class="project-block">
-            <img src="${item.img}" alt="">
+        <div class="team-card">
+          <div class="card-header">
+            <img src="${item.img}" alt="human-photo">
           </div>
-        </a>
+          <div class="card-footer">
+            <h2>${item.title}</h2>
+            <p>${item.subTitle}</p>
+        </div>
+        </div>
     `
   }).join('')
 

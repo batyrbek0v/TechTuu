@@ -61,16 +61,20 @@
   }
 
   .projects-container {
+    width: 100%;
     margin-top: 186px;
+    display: flex;
+    flex-direction: column;
 
     .projecs-inner-container {
-      position: absolute;
-      width: 900px;
+      margin: 100px auto 0 auto;
+      // position: absolute;
+      // width: 900px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px 0;
-      left: 20%;
+      // left: 20%;
       transform: rotate(48.21deg);
 
       @media (max-width:1441px) {
@@ -86,6 +90,7 @@
 
       @media (max-width:769px) {
         padding: 0;
+        margin: 60px 0 0 0;
       }
 
       .projects-wrapper {
@@ -95,6 +100,11 @@
 
         @media (max-width:850px) {
           display: none;
+        }
+
+        &:first-child {
+          align-items: end;
+          width: 100%;
         }
 
         &:nth-child(2) {
@@ -120,12 +130,10 @@
         }
 
         &:nth-child(4) {
+          width: 100%;
           justify-content: flex-start;
         }
 
-        &:last-child {
-          display: none;
-        }
 
         a {
           display: block;
@@ -135,6 +143,11 @@
             height: 265px;
             border-radius: 20px;
             overflow: hidden;
+            transition: 0.3s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
           }
 
           img {
@@ -159,49 +172,110 @@
         @media (max-width:450px) {
           padding: 0;
         }
+
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+
+
+          a {
+            display: block;
+
+            img {
+              display: block;
+              width: 235px;
+              width: 100%;
+              height: 235px;
+              object-fit: cover;
+              border-radius: 20px;
+
+              @media (max-width:426px) {
+                width: 300px;
+                height: 200px;
+              }
+            }
+
+          }
+        }
       }
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
+    }
+  }
+
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+
+    .team-cards-wrapper {
+      width: 1124px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+
+      @media (max-width:1200px) {
+        width: auto;
+        flex-wrap: wrap;
+        gap: 44px 0;
+      }
+
+      @media (max-width:769px) {
         justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
+      }
+
+      .team-card {
+        width: 321px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 44px 0;
 
+        @media (max-width:426px) {
+          width: auto;
+        }
 
-        a {
-          display: block;
+        .card-footer {
+          text-align: center;
 
-          img {
-            display: block;
-            width: 235px;
-            width: 100%;
-            height: 235px;
-            object-fit: cover;
-            border-radius: 20px;
+          h2 {
+            font-size: 27px;
+            font-weight: 400px;
 
-            @media (max-width:426px) {
-              width: 300px;
-              height: 200px;
+            @media (max-width:376px) {
+              font-size: 25px;
             }
           }
 
+          p {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 14px;
+
+            @media (max-width:376px) {
+              font-size: 18px;
+            }
+          }
         }
       }
     }
   }
-
 
 }

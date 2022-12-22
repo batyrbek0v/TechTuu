@@ -424,16 +424,17 @@ a {
   }
 }
 .general-container .projects-container {
+  width: 100%;
   margin-top: 186px;
+  display: flex;
+  flex-direction: column;
 }
 .general-container .projects-container .projecs-inner-container {
-  position: absolute;
-  width: 900px;
+  margin: 100px auto 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px 0;
-  left: 20%;
   transform: rotate(48.21deg);
 }
 @media (max-width: 1441px) {
@@ -452,6 +453,7 @@ a {
 @media (max-width: 769px) {
   .general-container .projects-container .projecs-inner-container {
     padding: 0;
+    margin: 60px 0 0 0;
   }
 }
 .general-container .projects-container .projecs-inner-container .projects-wrapper {
@@ -464,6 +466,10 @@ a {
     display: none;
   }
 }
+.general-container .projects-container .projecs-inner-container .projects-wrapper:first-child {
+  align-items: end;
+  width: 100%;
+}
 .general-container .projects-container .projecs-inner-container .projects-wrapper:nth-child(2) a:first-child .project-block {
   border: 4px solid #bdbdbd;
 }
@@ -474,10 +480,8 @@ a {
   border: 4px solid #F2C94C;
 }
 .general-container .projects-container .projecs-inner-container .projects-wrapper:nth-child(4) {
+  width: 100%;
   justify-content: flex-start;
-}
-.general-container .projects-container .projecs-inner-container .projects-wrapper:last-child {
-  display: none;
 }
 .general-container .projects-container .projecs-inner-container .projects-wrapper a {
   display: block;
@@ -487,6 +491,10 @@ a {
   height: 265px;
   border-radius: 20px;
   overflow: hidden;
+  transition: 0.3s;
+}
+.general-container .projects-container .projecs-inner-container .projects-wrapper a .project-block:hover {
+  transform: scale(1.1);
 }
 .general-container .projects-container .projecs-inner-container .projects-wrapper a img {
   width: 100%;
@@ -510,7 +518,7 @@ a {
     padding: 0;
   }
 }
-.general-container .projects-container .projecs-inner-container .swiper-slide {
+.general-container .projects-container .projecs-inner-container .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -528,10 +536,10 @@ a {
   -webkit-align-items: center;
   align-items: center;
 }
-.general-container .projects-container .projecs-inner-container .swiper-slide a {
+.general-container .projects-container .projecs-inner-container .swiper .swiper-slide a {
   display: block;
 }
-.general-container .projects-container .projecs-inner-container .swiper-slide a img {
+.general-container .projects-container .projecs-inner-container .swiper .swiper-slide a img {
   display: block;
   width: 235px;
   width: 100%;
@@ -540,9 +548,68 @@ a {
   border-radius: 20px;
 }
 @media (max-width: 426px) {
-  .general-container .projects-container .projecs-inner-container .swiper-slide a img {
+  .general-container .projects-container .projecs-inner-container .swiper .swiper-slide a img {
     width: 300px;
     height: 200px;
+  }
+}
+.general-container .team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+.general-container .team-container .team-cards-wrapper {
+  width: 1124px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+@media (max-width: 1200px) {
+  .general-container .team-container .team-cards-wrapper {
+    width: auto;
+    flex-wrap: wrap;
+    gap: 44px 0;
+  }
+}
+@media (max-width: 769px) {
+  .general-container .team-container .team-cards-wrapper {
+    justify-content: center;
+  }
+}
+.general-container .team-container .team-cards-wrapper .team-card {
+  width: 321px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px 0;
+}
+@media (max-width: 426px) {
+  .general-container .team-container .team-cards-wrapper .team-card {
+    width: auto;
+  }
+}
+.general-container .team-container .team-cards-wrapper .team-card .card-footer {
+  text-align: center;
+}
+.general-container .team-container .team-cards-wrapper .team-card .card-footer h2 {
+  font-size: 27px;
+  font-weight: 400px;
+}
+@media (max-width: 376px) {
+  .general-container .team-container .team-cards-wrapper .team-card .card-footer h2 {
+    font-size: 25px;
+  }
+}
+.general-container .team-container .team-cards-wrapper .team-card .card-footer p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 14px;
+}
+@media (max-width: 376px) {
+  .general-container .team-container .team-cards-wrapper .team-card .card-footer p {
+    font-size: 18px;
   }
 }
 
