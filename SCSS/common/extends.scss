@@ -1,0 +1,11 @@
+%extend-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  color: $color-LBlue;
+
+  @media (max-width:426px) {
+    font-size: 38px;
+  }
+
+}
