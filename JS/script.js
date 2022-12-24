@@ -5,6 +5,11 @@ const mobileWrapper = document.querySelector('.mobile-wrapper')
 const closeIcon = document.querySelector('.close-img')
 const slider = document.querySelector('.team-cards-wrapper')
 const socialIconsWrapper = document.querySelector('.social-icons-wrapper')
+const form = document.querySelector('.form')
+const formInput = document.querySelectorAll('.form-input')
+const overley = document.querySelector('.overley')
+const overley2 = document.querySelector('.overley2')
+const popUpBtn = document.querySelectorAll('.popUp-btn')
 
 // DOM-ELEMENTS-END
 
@@ -59,6 +64,22 @@ window.addEventListener('load', () => {
   iconsTemplate(iconsBase)
 })
 
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: "3",
+  spaceBetween: 20,
+  breakpoints: {
+    '320': {
+      slidesPerView: 1,
+    },
+    '450': {
+      slidesPerView: 2,
+    },
+    '768': {
+      slidesPerView: 3,
+    },
+  },
+});
+
 const sliderCardsTemplate = sliderBase => {
   const template = sliderBase.map(item => {
     return `
@@ -81,6 +102,7 @@ const iconsTemplate = icon => {
 
   socialIconsWrapper.innerHTML = template
 }
+
 menuBurger.addEventListener('click', e => {
   e.preventDefault()
 
@@ -93,18 +115,32 @@ closeIcon.addEventListener('click', e => {
   mobileWrapper.classList.remove('active')
 })
 
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: "3",
-  spaceBetween: 20,
-  breakpoints: {
-    '320': {
-      slidesPerView: 1,
-    },
-    '450': {
-      slidesPerView: 2,
-    },
-    '768': {
-      slidesPerView: 3,
-    },
-  },
-});
+form.addEventListener("submit", e => {
+  e.preventDefault()
+  formInput.forEach(input => {
+    if (input.value === '') {
+
+      // overley.classList.toggle('active')
+      input.classList.add('error')
+
+      setTimeout(() => {
+        input.classList.remove('error')
+      }, 3000)
+
+    } else {
+      overley2.classList.toggle('active')
+      input.value = ''
+      console.log(input.value);
+    }
+  })
+})
+
+
+popUpBtn.forEach(button => {
+  button.addEventListener('click', e => {
+    e.preventDefault()
+    overley.classList.remove('active')
+    overley2.classList.remove('active')
+  })
+})
+
